@@ -13,8 +13,18 @@ app.get("/", (req, res) => {
 // app.get('/ab?cd', (req, res) => {
 //   res.send('ab?cd')
 // })
-app.get('/ab+cd', (req, res) => {
-  res.send('ab+cd')
+// app.get('/ab+cd', (req, res) => {
+//   res.send('ab+cd')
+// })
+// app.get('/ab*cd', (req, res) => {
+//   res.send('ab*cd')
+// })
+app.get('/ab(cd)?e', (req, res) => {
+  res.send('ab(cd)?e')
+})
+
+app.get('/ab(cd)?e', (req, res) => {
+  res.send('ab(cd)?e')
 })
 
 app.listen(3000, () => {
