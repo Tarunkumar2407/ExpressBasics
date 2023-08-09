@@ -13,6 +13,9 @@ app.get("/", (req, res) => {
 // app.get('/ab?cd', (req, res) => {
 //   res.send('ab?cd')
 // })
+app.get('/ab+cd', (req, res) => {
+  res.send('ab+cd')
+})
 
 app.listen(3000, () => {
   console.log("listening port to 3000");
