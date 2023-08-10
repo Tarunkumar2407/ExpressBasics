@@ -37,6 +37,8 @@ app.get("/", (req, res) => {
 
 // 
 
+// A combination of independent functions and arrays of functions can handle a rout
+
 const cb0 = function (req, res, next) {
   console.log('CB0')
   next()
