@@ -12,8 +12,14 @@ const options = {
 // }
 
 const connectDB = async (DATABASE_URL)=> {
- try {
-        await mongoose.connect(DATABASE_URL);
+ try {  
+        const DB_OPTIONS = {
+            user: "Tarun",
+            pass: "123456",
+            dbName: "schooldb",
+            authSource: "schooldb"
+        }
+        await mongoose.connect(DATABASE_URL, DB_OPTIONS);
         return console.log('connected successfully');
     } catch (error) {
         return console.log(error);
