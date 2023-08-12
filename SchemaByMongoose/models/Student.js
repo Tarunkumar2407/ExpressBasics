@@ -141,10 +141,17 @@ const createMultipleDoc = async () => {
 
     //setting limit to the documents 
     // const result = await studentModel.find().limit(2)
+    // const result = await studentModel.find({}, null, {limit: 2})
     // console.log(result)
 
     //counting the documents 
-    const result = await studentModel.find().count()
+    // const result = await studentModel.find().count()
+    // const result = await studentModel.find().countDocuments()
+
+    //sorting the documents
+    // const result = await studentModel.find().sort({age: 1})
+    const result = await studentModel.find().sort({age: -1})
+
     console.log(result)
   }
 export { getAllData }
