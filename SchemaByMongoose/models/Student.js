@@ -85,4 +85,10 @@ const createMultipleDoc = async () => {
       console.log(result);
     } catch (error) {console.log(error)}
   };
-export { createMultipleDoc }
+
+  //retrieving all data
+  const getAllData = async()=>{
+    const result = await studentModel.find();
+    console.log(result);
+  }
+export { getAllData }
