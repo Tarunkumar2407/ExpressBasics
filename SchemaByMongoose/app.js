@@ -1,6 +1,6 @@
 import express from "express"
 import connectDB from "./db/connectDB.js";
-import { updateDoc } from "./models/Student.js";
+import { deleteDoc } from "./models/Student.js";
 const app = express();
 const DATABASE_URL = "mongodb://127.0.0.1:27017"
 
@@ -16,7 +16,10 @@ connectDB(DATABASE_URL);
 // getAllData();
 
 //update data
-updateDoc();
+// updateDoc();
+
+//delete data 
+deleteDoc();
 
 
 app.listen('3000', () => {

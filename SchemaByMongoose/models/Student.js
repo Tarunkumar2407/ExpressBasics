@@ -193,12 +193,30 @@ const createMultipleDoc = async () => {
   // }
 
   //updateMany()
-  const updateDoc = async () => {
-    try {
-      const result = await studentModel.updateMany({age: 26}, {fees: 5100})
-       console.log(result)
-    } catch (error) {
-       console.log(error)
-    }  
+  // const updateDoc = async () => {
+  //   try {
+  //     const result = await studentModel.updateMany({age: 26}, {fees: 5100})
+  //      console.log(result)
+  //   } catch (error) {
+  //      console.log(error)
+  //   }  
+  // }
+
+  //delete document by findByIdAndDelete()
+  // const deleteDoc = async () => {
+  //   const result = await studentModel.findByIdAndDelete( "64d6823d8f15472bdddc9971")
+  //   console.log(result)
+  // }
+
+  //delete document by deleteOne
+  // const deleteDoc = async () => {
+  //   const result = await studentModel.deleteOne( {_id:"64d6823d8f15472bdddc9973"})
+  //   console.log(result)
+  // }
+
+  // delete document by deleteMany
+  const deleteDoc = async () => {
+    const result = await studentModel.deleteMany( {age: 26})
+    console.log(result)
   }
-export { updateDoc }
+export { deleteDoc }
