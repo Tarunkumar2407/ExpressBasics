@@ -89,6 +89,20 @@ const createMultipleDoc = async () => {
   //retrieving all data
   const getAllData = async()=>{
     const result = await studentModel.find();
-    console.log(result);
+    // console.log(result);
+    result.forEach((item)=>{
+      console.log(
+        item.name,
+        item.age,
+        item.fees.toString(),
+        item.hobbies[0],
+        item.hobbies[1],
+        item.hobbies[2],
+        item.comments[0].value,
+        item.comments[0].publish,
+        item.isActive,
+        item.join
+      )
+    })
   }
 export { getAllData }
