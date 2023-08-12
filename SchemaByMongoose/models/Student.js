@@ -153,7 +153,16 @@ const createMultipleDoc = async () => {
     // const result = await studentModel.find().sort({age: -1})
 
     //mix query for documents
-    const result = await studentModel.find({},{name:1, age:1}, {limit:5, skip:1})
+    // const result = await studentModel.find({},{name:1, age:1}, {limit:5, skip:1})
+
+    //comparison operators
+    // const result = await studentModel.find({age: {$gt: 25}})
+    // const result = await studentModel.find({age: {$gte: 25}})
+    // const result = await studentModel.find({age: {$lt: 25}})
+    // const result = await studentModel.find({age: {$lte: 25}})
+    // const result = await studentModel.find({age: {$ne: 25}})
+    // const result = await studentModel.find({age: {$in: [21, 25]}})
+    const result = await studentModel.find({age: {$nin: [21, 25]}})
 
     console.log(result)
   }
