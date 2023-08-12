@@ -87,22 +87,36 @@ const createMultipleDoc = async () => {
   };
 
   //retrieving all data
-  const getAllData = async()=>{
-    const result = await studentModel.find();
-    // console.log(result);
-    result.forEach((item)=>{
-      console.log(
-        item.name,
-        item.age,
-        item.fees.toString(),
-        item.hobbies[0],
-        item.hobbies[1],
-        item.hobbies[2],
-        item.comments[0].value,
-        item.comments[0].publish,
-        item.isActive,
-        item.join
-      )
-    })
-  }
+  // const getAllData = async()=>{
+  //   const result = await studentModel.find();
+  //   // console.log(result);
+  //   result.forEach((item)=>{
+  //     console.log(
+  //       item.name,
+  //       item.age,
+  //       item.fees.toString(),
+  //       item.hobbies[0],
+  //       item.hobbies[1],
+  //       item.hobbies[2],
+  //       item.comments[0].value,
+  //       item.comments[0].publish,
+  //       item.isActive,
+  //       item.join
+  //     )
+  //   })
+  // }
+
+  //retrieving specific data which we need
+  const getAllData = async () => {
+    // to include fields of a documents
+    const result = await studentModel.find().select("name age")
+    // const result = await studentModel.find().select(["name", "age"])
+    // const result = await studentModel.find().select({name:1, age:1})
+
+    // to exclude fields of a documents
+    // const result = await studentModel.find().select("-name -age")
+    // const result = await studentModel.find().select(['-name', '-age'])
+    // const result = await studentModel.find().select({name: 0, age: 0})
+    console.log(result)
+  } 
 export { getAllData }
