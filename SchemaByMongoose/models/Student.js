@@ -106,10 +106,10 @@ const createMultipleDoc = async () => {
   //   })
   // }
 
-  //retrieving specific data which we need
-  const getAllData = async () => {
+  //retrieving specific data which we need including and excluding
+  // const getAllData = async () => {
     // to include fields of a documents
-    const result = await studentModel.find().select("name age")
+    // const result = await studentModel.find().select("name age")
     // const result = await studentModel.find().select(["name", "age"])
     // const result = await studentModel.find().select({name:1, age:1})
 
@@ -117,6 +117,34 @@ const createMultipleDoc = async () => {
     // const result = await studentModel.find().select("-name -age")
     // const result = await studentModel.find().select(['-name', '-age'])
     // const result = await studentModel.find().select({name: 0, age: 0})
+
+    //
+    // console.log(result)
+  // } 
+
+  //retrieving unique or one data by unique fields
+  const getAllData = async () => {
+    // it returns a object as an reuslt 
+    // const result = await studentModel.findById("64d67ba8bb9242ffeb71f51b")
+    // console.log(result.name)
+    // console.log(result.age)
+
+    //to retrieve by specified field
+    // const result = await studentModel.find({name:"Soumya"})
+    // console.log(result[0].age)
+    // console.log(result[0].fees.toString())
+    // console.log(result[0]._id.getTimestamp())
+
+    //to get specific fields by using fields
+    // const result = await studentModel.find({name:"Soumya"}).select("name age")
+    // console.log(result)  }
+
+    //setting limit to the documents 
+    // const result = await studentModel.find().limit(2)
+    // console.log(result)
+
+    //counting the documents 
+    const result = await studentModel.find().count()
     console.log(result)
-  } 
+  }
 export { getAllData }
