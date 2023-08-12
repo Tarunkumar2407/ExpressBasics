@@ -162,7 +162,12 @@ const createMultipleDoc = async () => {
     // const result = await studentModel.find({age: {$lte: 25}})
     // const result = await studentModel.find({age: {$ne: 25}})
     // const result = await studentModel.find({age: {$in: [21, 25]}})
-    const result = await studentModel.find({age: {$nin: [21, 25]}})
+    // const result = await studentModel.find({age: {$nin: [21, 25]}})
+
+    // logical operators 
+    // const result = await studentModel.find({$and: [{age: 21, fees: 5900}]})
+    // const result = await studentModel.find({$or: [{age: 24, fees: 5000}]})
+    const result = await studentModel.find({$or: [{age: 24, fees: 5000}]})
 
     console.log(result)
   }
