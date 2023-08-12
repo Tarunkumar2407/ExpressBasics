@@ -150,7 +150,10 @@ const createMultipleDoc = async () => {
 
     //sorting the documents
     // const result = await studentModel.find().sort({age: 1})
-    const result = await studentModel.find().sort({age: -1})
+    // const result = await studentModel.find().sort({age: -1})
+
+    //mix query for documents
+    const result = await studentModel.find({},{name:1, age:1}, {limit:5, skip:1})
 
     console.log(result)
   }
