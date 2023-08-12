@@ -123,7 +123,7 @@ const createMultipleDoc = async () => {
   // } 
 
   //retrieving unique or one data by unique fields
-  const getAllData = async () => {
+  // const getAllData = async () => {
     // it returns a object as an reuslt 
     // const result = await studentModel.findById("64d67ba8bb9242ffeb71f51b")
     // console.log(result.name)
@@ -165,10 +165,40 @@ const createMultipleDoc = async () => {
     // const result = await studentModel.find({age: {$nin: [21, 25]}})
 
     // logical operators 
-    // const result = await studentModel.find({$and: [{age: 21, fees: 5900}]})
-    // const result = await studentModel.find({$or: [{age: 24, fees: 5000}]})
-    const result = await studentModel.find({$or: [{age: 24, fees: 5000}]})
+    // const result = await studentModel.find({$and: [{age: 21}, {fees: 5900}]})
+    // const result = await studentModel.find({$or: [{age: 24}, {fees: 5000}]})
+  //   const result = await studentModel.find({$or: [{age: 24}, {fees: 5000}]})
 
-    console.log(result)
+  //   console.log(result)
+  // }
+
+  //update document by findByIdAndUpdate()
+  // const updateDoc = async () => {
+  //   try {
+  //     const result = await studentModel.findByIdAndUpdate("64d67ba8bb9242ffeb71f51b", {name: "Somu"})
+  //      console.log(result)
+  //   } catch (error) {
+  //      console.log(error)
+  //   }  
+  // }
+
+  //updateOne()
+  // const updateDoc = async () => {
+  //   try {
+  //     const result = await studentModel.updateOne({_id:"64d67ba8bb9242ffeb71f51b"}, {name: "Rahul"})
+  //      console.log(result)
+  //   } catch (error) {
+  //      console.log(error)
+  //   }  
+  // }
+
+  //updateMany()
+  const updateDoc = async () => {
+    try {
+      const result = await studentModel.updateMany({age: 26}, {fees: 5100})
+       console.log(result)
+    } catch (error) {
+       console.log(error)
+    }  
   }
-export { getAllData }
+export { updateDoc }
