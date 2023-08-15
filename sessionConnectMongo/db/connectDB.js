@@ -14,10 +14,10 @@ import mongoose from "mongoose";
 const connectDB = async (DATABASE_URL)=> {
  try {  
         const DB_OPTIONS = {
-            user: "Tarun",
-            pass: "123456",
+            // user: "Tarun",
+            // pass: "123456",
             dbName: "schooldb",
-            authSource: "schooldb"
+            // authSource: "schooldb"
         }
         await mongoose.connect(DATABASE_URL, DB_OPTIONS);
         return console.log('connected successfully');

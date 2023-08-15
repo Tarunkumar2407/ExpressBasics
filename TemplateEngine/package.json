@@ -1,6 +1,7 @@
 {
-  "name": "cookies",
+  "name": "templateengine",
   "version": "1.0.0",
+  "description": "",
   "main": "app.js",
   "scripts": {
     "dev": "nodemon app"
@@ -10,11 +11,13 @@
   "type": "module",
   "license": "ISC",
   "dependencies": {
-    "cookie-parser": "^1.4.6",
+    "ejs": "^3.1.9",
     "express": "^5.0.0-alpha.8"
   },
   "devDependencies": {
+    "@babel/cli": "^7.22.10",
+    "@babel/core": "^7.22.10",
+    "@babel/preset-env": "^7.22.10",
     "nodemon": "^3.0.1"
-  },
-  "description": ""
+  }
 }
