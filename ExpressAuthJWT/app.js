@@ -23,8 +23,6 @@ app.use(express.json())
 //loading router 
 app.use("/api/user", userRoutes)
 
-
-
 app.listen(Port, () => {
     console.log(`Server is running at port ${Port}`)
 })
