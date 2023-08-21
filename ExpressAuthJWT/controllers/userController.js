@@ -2,6 +2,7 @@ import userModel from "../models/user.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken"
 import dotenv from "dotenv"
+import transporter from "../config/emailConfig.js";
 dotenv.config()
 
 class UserController {
@@ -100,7 +101,14 @@ class UserController {
              const token = jwt.sign({userID : user._id}, secret , {expiresIn: "15m"})
              const link = `https://127.0.0.1:8000/api/user/reset/${user._id}/${token}`
              console.log(link)
-             res.send({"status": "Success", "message": "Password reset email send...Check your email"})
+             let info = await transporter.sendMail({
+                from: process.env.EMAIL_FROM,          // sender address
+                to: user.email,                        // list of receivers
+                subject: "Password reset link",        // Subject line
+                text: `Hello ${user.name} This is my node project password reset link by email`,                  // plain text body
+                html: `<a href=${link}>Click here<a> to Reset your password`, 
+             })
+             res.send({"status": "Success", "message": "Password reset email send...Check your email", "info": info})
            }else{
             res.send({"status": "failed", "message": "Email doesn't exist"})
            }
